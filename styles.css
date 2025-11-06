@@ -378,6 +378,23 @@ section h2 {
 .stat-label {
     color: var(--medium-gray);
     font-size: 1rem;
+    margin-bottom: 0.75rem;
+}
+
+.stat-source {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--primary-blue);
+    text-decoration: none;
+    margin-top: 0.75rem;
+    transition: all 0.3s ease;
+    opacity: 0.8;
+}
+
+.stat-source:hover {
+    opacity: 1;
+    text-decoration: underline;
+    color: #0052cc;
 }
 
 .citation {
