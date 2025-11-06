@@ -209,46 +209,75 @@ section h2 {
 /* Features Grid */
 .features-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
 }
 
 .feature-card {
-    background: var(--white);
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: var(--shadow-md);
-    transition: all 0.3s ease;
-    border: 1px solid #e5e7eb;
+    background: linear-gradient(135deg, #ffffff 0%, #f8faff 100%);
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(0, 102, 255, 0.08);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(0, 102, 255, 0.08);
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-blue) 0%, #00a3ff 100%);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .feature-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-lg);
+    transform: translateY(-8px);
+    box-shadow: 0 16px 48px rgba(0, 102, 255, 0.15);
+    border-color: rgba(0, 102, 255, 0.2);
+}
+
+.feature-card:hover::before {
+    transform: scaleX(1);
 }
 
 .feature-icon {
-    width: 64px;
-    height: 64px;
-    background: linear-gradient(135deg, #E0F2FF 0%, #DBEAFE 100%);
-    border-radius: 16px;
+    width: 72px;
+    height: 72px;
+    background: linear-gradient(135deg, #EBF5FF 0%, #E0EEFF 100%);
+    border-radius: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.75rem;
     font-size: 2rem;
-    box-shadow: 0 2px 8px rgba(0, 102, 255, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 102, 255, 0.1);
+    transition: all 0.4s ease;
+    position: relative;
+}
+
+.feature-card:hover .feature-icon {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 8px 20px rgba(0, 102, 255, 0.2);
 }
 
 .feature-card h3 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
     color: var(--dark-text);
+    font-weight: 700;
 }
 
 .feature-card p {
     color: var(--medium-gray);
-    line-height: 1.6;
+    line-height: 1.7;
+    font-size: 1.05rem;
 }
 
 /* Analytics Section */
@@ -377,62 +406,148 @@ section h2 {
 
 /* Pricing Section */
 .pricing-section {
-    background: var(--light-gray);
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
     padding: 6rem 2rem;
+    position: relative;
+}
+
+.pricing-container {
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 .pricing-card {
-    max-width: 600px;
-    margin: 0 auto;
     background: var(--white);
-    padding: 3rem;
-    border-radius: 16px;
-    box-shadow: 0 10px 40px rgba(0, 102, 255, 0.1);
-    border: 2px solid #E0F2FF;
+    border-radius: 24px;
+    box-shadow: 0 20px 60px rgba(0, 102, 255, 0.12);
+    overflow: hidden;
+    border: 2px solid rgba(0, 102, 255, 0.1);
+    transition: all 0.4s ease;
+}
+
+.pricing-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 28px 80px rgba(0, 102, 255, 0.18);
 }
 
 .pricing-header {
+    background: linear-gradient(135deg, var(--primary-blue) 0%, #0052cc 100%);
+    padding: 3rem 3rem 2.5rem;
     text-align: center;
-    margin-bottom: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.pricing-header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    animation: pulse 4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 0.5; }
+    50% { transform: scale(1.1); opacity: 0.8; }
+}
+
+.pricing-badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 0.5rem 1.25rem;
+    border-radius: 50px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.5px;
 }
 
 .pricing-amount {
-    font-size: 3.5rem;
+    font-size: 4.5rem;
     font-weight: 800;
-    color: var(--primary-blue);
+    color: white;
+    line-height: 1;
     margin-bottom: 0.5rem;
+    position: relative;
+    z-index: 1;
 }
 
 .pricing-amount span {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
+    font-weight: 500;
+    opacity: 0.9;
 }
 
 .pricing-subtext {
-    color: var(--medium-gray);
+    color: rgba(255, 255, 255, 0.9);
     font-size: 1.125rem;
-    margin-bottom: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.pricing-body {
+    padding: 3rem;
 }
 
 .pricing-features {
     list-style: none;
-    margin: 2rem 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.25rem;
 }
 
 .pricing-features li {
-    padding: 0.75rem 0;
-    padding-left: 2rem;
+    padding: 1rem 1.25rem;
     position: relative;
     color: var(--dark-text);
     line-height: 1.6;
+    background: #f8faff;
+    border-radius: 12px;
+    padding-left: 3rem;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.pricing-features li:hover {
+    background: #eff6ff;
+    transform: translateX(4px);
 }
 
 .pricing-features li:before {
     content: "✓";
     position: absolute;
-    left: 0;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
     color: var(--primary-blue);
     font-weight: bold;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0, 102, 255, 0.15);
+}
+
+.pricing-cta {
+    text-align: center;
+    margin-top: 2.5rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid #e5e7eb;
+}
+
+.pricing-cta .btn-primary {
+    font-size: 1.125rem;
+    padding: 1rem 3rem;
+    border-radius: 12px;
 }
 
 /* FAQ Section */
@@ -584,6 +699,22 @@ footer {
     }
 
     .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .pricing-amount {
+        font-size: 3.5rem;
+    }
+
+    .pricing-header {
+        padding: 2rem 1.5rem;
+    }
+
+    .pricing-body {
+        padding: 2rem 1.5rem;
+    }
+
+    .pricing-features {
         grid-template-columns: 1fr;
     }
 }
