@@ -9,13 +9,33 @@
 
     <!-- Google Analytics 4 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-4396TNYHF0"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
 
-          gtag('config', 'G-4396TNYHF0');
-        </script>
+        gtag('config', 'G-4396TNYHF0', {
+            'send_page_view': true,
+            'anonymize_ip': true,
+            'cookie_flags': 'SameSite=None;Secure'
+        });
+
+        // Track JavaScript errors automatically
+        window.addEventListener('error', function(e) {
+            gtag('event', 'exception', {
+                'description': e.message + ' @ ' + e.filename + ':' + e.lineno,
+                'fatal': false
+            });
+        });
+
+        // Track unhandled promise rejections
+        window.addEventListener('unhandledrejection', function(e) {
+            gtag('event', 'exception', {
+                'description': 'Unhandled Promise: ' + e.reason,
+                'fatal': false
+            });
+        });
+    </script>
 </head>
 <body>
     <!-- Navigation -->
