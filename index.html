@@ -6,6 +6,16 @@
     <title>HiredAI.ca - AI Receptionist for Dentists</title>
     <meta name="description" content="AI voice receptionist for Canadian dental practices. Trusted by hundreds of dental practices across Canada.">
     <link rel="stylesheet" href="styles.css">
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4396TNYHF0"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-4396TNYHF0');
+        </script>
 </head>
 <body>
     <!-- Navigation -->
@@ -17,7 +27,7 @@
                 <li><a href="#features">Features</a></li>
                 <li><a href="#pricing">Pricing</a></li>
                 <li><a href="#faq">FAQ</a></li>
-                <li><a href="mailto:contact@hiredai.ca?subject=Book Demo" class="btn-primary">Book Demo</a></li>
+                <li><a href="#" class="btn-primary" id="openContactBtn">Contact</a></li>
             </ul>
         </div>
     </nav>
@@ -114,7 +124,7 @@
                         <li>Dedicated support team</li>
                     </ul>
                     <div class="pricing-cta">
-                        <a href="mailto:contact@hiredai.ca?subject=Get Started" class="btn-primary">Get Started Today</a>
+                        <a href="#" class="btn-primary open-contact-btn">Get Started Today</a>
                     </div>
                 </div>
             </div>
@@ -281,8 +291,39 @@
         </div>
     </section>
 
+    <!-- Contact Form Modal -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" id="closeModal">&times;</button>
+            <h2>Contact Us</h2>
+            <p class="modal-subtitle">Send us a message and we'll get back to you shortly</p>
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="contactName">Your Name</label>
+                    <input type="text" id="contactName" name="name" required placeholder="Enter your name">
+                </div>
+                <div class="form-group">
+                    <label for="contactEmail">Your Email</label>
+                    <input type="email" id="contactEmail" name="email" required placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="contactMessage">Message</label>
+                    <textarea id="contactMessage" name="message" required placeholder="Tell us how we can help you" rows="5"></textarea>
+                </div>
+                <button type="submit" class="btn-primary btn-submit">Send Message</button>
+            </form>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer>
+        <div class="footer-content">
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p><strong>Email:</strong> <a href="mailto:tech@hiredai.ca">tech@hiredai.ca</a></p>
+                <p><strong>Phone:</strong> <a href="tel:+12368827114">+1 (236) 882-7114</a></p>
+            </div>
+        </div>
         <div class="footer-bottom">
             <p>&copy; 2025 HiredAI.ca - All rights reserved. Based in Vancouver, BC, Canada 🍁</p>
         </div>
