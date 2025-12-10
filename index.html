@@ -366,7 +366,8 @@
     </script>
 
     <!-- Google reCAPTCHA v2 - Required for Retell Widget -->
-    <script src="https://www.google.com/recaptcha/api.js?render=explicit" async defer></script>
+    <!-- Load synchronously (no async/defer) to ensure it's ready when widget loads -->
+    <script src="https://www.google.com/recaptcha/api.js"></script>
 
     <!-- Retell AI Widget with Error Tracking -->
     <script>
