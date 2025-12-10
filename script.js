@@ -153,25 +153,88 @@ contactForm.addEventListener('submit', (e) => {
     const email = document.getElementById('contactEmail').value;
     const message = document.getElementById('contactMessage').value;
 
-    // Track form submission in Google Analytics
-    if (typeof gtag !== 'undefined') {
-        gtag('event', 'contact_form_submitted', {
-            'event_category': 'conversion',
-            'event_label': 'Contact Form'
-        });
+    // Get the submit button for loading state
+    const submitBtn = contactForm.querySelector('.btn-submit');
+    const originalBtnText = submitBtn.textContent;
+
+    // Show loading state
+    submitBtn.textContent = 'Sending...';
+    submitBtn.disabled = true;
+
+    // Check if EmailJS is configured
+    if (typeof emailjs === 'undefined') {
+        console.error('EmailJS not loaded');
+        // Fallback to mailto
+        fallbackToMailto(name, email, message);
+        return;
     }
 
-    // Create mailto link with form data
+    // SETUP REQUIRED: Replace these with your EmailJS service, template, and public key
+    // Service ID: Get from https://dashboard.emailjs.com/admin
+    // Template ID: Create a template with variables: from_name, reply_to, message
+    const serviceID = 'service_wdbvfs9';  // Replace with your EmailJS service ID
+    const templateID = 'template_gn0ql9h';  // Replace with your EmailJS template ID
+
+    // Send email using EmailJS
+    emailjs.send(serviceID, templateID, {
+        from_name: name,
+        reply_to: email,
+        message: message,
+        to_email: 'tech@hiredai.ca'
+    })
+    .then(function(response) {
+        console.log('Email sent successfully!', response.status, response.text);
+
+        // Track successful submission in Google Analytics
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'contact_form_submitted', {
+                'event_category': 'conversion',
+                'event_label': 'Contact Form - Email Sent'
+            });
+        }
+
+        // Show success message
+        alert('Thank you! Your message has been sent successfully. We\'ll get back to you shortly.');
+
+        // Close modal and reset form
+        closeContactModal();
+
+        // Reset button
+        submitBtn.textContent = originalBtnText;
+        submitBtn.disabled = false;
+    })
+    .catch(function(error) {
+        console.error('Failed to send email:', error);
+
+        // Track error in Google Analytics
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'contact_form_error', {
+                'event_category': 'error',
+                'event_label': 'EmailJS Error',
+                'error_details': error.text || error.message
+            });
+        }
+
+        // Fallback to mailto if EmailJS fails
+        alert('There was an issue sending your message directly. Opening your email client instead...');
+        fallbackToMailto(name, email, message);
+
+        // Reset button
+        submitBtn.textContent = originalBtnText;
+        submitBtn.disabled = false;
+    });
+});
+
+// Fallback function to open email client
+function fallbackToMailto(name, email, message) {
     const subject = encodeURIComponent(`Contact from ${name}`);
     const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
     const mailtoLink = `mailto:tech@hiredai.ca?subject=${subject}&body=${body}`;
 
-    // Open email client
     window.location.href = mailtoLink;
 
-    // Close modal and show success message
     setTimeout(() => {
         closeContactModal();
         alert('Your email client has been opened. Please send the email to complete your message.');
     }, 500);
-});
+}

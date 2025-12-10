@@ -352,7 +352,54 @@
     <!-- JavaScript -->
     <script src="script.js"></script>
 
-    <!-- Retell AI Widget -->
+    <!-- EmailJS SDK for direct email sending -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        // Initialize EmailJS with your public key
+        // SETUP REQUIRED: Replace 'YOUR_PUBLIC_KEY' with your actual EmailJS public key
+        // Get it from: https://dashboard.emailjs.com/admin/account
+        (function(){
+            emailjs.init({
+                publicKey: 'vlMZy8HjoWAXlNWIg', // Replace with your EmailJS public key
+            });
+        })();
+    </script>
+
+    <!-- Retell AI Widget with Error Tracking -->
+    <script>
+        // Track Retell widget loading
+        console.log('[Retell] Starting widget load...');
+
+        // Monitor for Retell widget errors
+        window.addEventListener('error', function(e) {
+            if (e.filename && e.filename.includes('retell')) {
+                console.error('[Retell] Widget error:', e.message, e.filename, e.lineno);
+
+                // Track in Google Analytics
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'retell_widget_error', {
+                        'event_category': 'error',
+                        'event_label': e.message,
+                        'error_details': e.filename + ':' + e.lineno
+                    });
+                }
+            }
+        }, true);
+
+        // Check if widget loads successfully
+        setTimeout(function() {
+            var retellWidget = document.getElementById('retell-widget');
+            if (retellWidget) {
+                console.log('[Retell] Widget script tag found');
+                console.log('[Retell] Public Key:', retellWidget.getAttribute('data-public-key'));
+                console.log('[Retell] Agent ID:', retellWidget.getAttribute('data-agent-id'));
+                console.log('[Retell] Phone Number:', retellWidget.getAttribute('data-phone-number'));
+            } else {
+                console.error('[Retell] Widget script tag not found!');
+            }
+        }, 1000);
+    </script>
+
     <script
       id="retell-widget"
       src="https://dashboard.retellai.com/retell-widget.js"
@@ -366,6 +413,7 @@
       data-tc="https://hiredai.ca"
       data-color="#FFA07A"
       data-recaptcha-key="6LfGhBYsAAAAAEpxfso7bqpUmrER2aOMOfmRvpE9"
+      onerror="console.error('[Retell] Failed to load widget script'); if(typeof gtag !== 'undefined') { gtag('event', 'retell_script_load_failed', {'event_category': 'error'}); }"
     ></script>
 </body>
 </html>
