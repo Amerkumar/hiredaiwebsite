@@ -172,8 +172,8 @@ contactForm.addEventListener('submit', (e) => {
     // SETUP REQUIRED: Replace these with your EmailJS service, template, and public key
     // Service ID: Get from https://dashboard.emailjs.com/admin
     // Template ID: Create a template with variables: from_name, reply_to, message
-    const serviceID = 'YOUR_SERVICE_ID';  // Replace with your EmailJS service ID
-    const templateID = 'YOUR_TEMPLATE_ID';  // Replace with your EmailJS template ID
+    const serviceID = 'service_wdbvfs9';  // Replace with your EmailJS service ID
+    const templateID = 'template_gn0ql9h';  // Replace with your EmailJS template ID
 
     // Send email using EmailJS
     emailjs.send(serviceID, templateID, {
