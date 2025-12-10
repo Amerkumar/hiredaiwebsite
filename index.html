@@ -365,6 +365,9 @@
         })();
     </script>
 
+    <!-- Google reCAPTCHA v2 - Required for Retell Widget -->
+    <script src="https://www.google.com/recaptcha/api.js?render=explicit" async defer></script>
+
     <!-- Retell AI Widget with Error Tracking -->
     <script>
         // Track Retell widget loading
@@ -394,10 +397,18 @@
                 console.log('[Retell] Public Key:', retellWidget.getAttribute('data-public-key'));
                 console.log('[Retell] Agent ID:', retellWidget.getAttribute('data-agent-id'));
                 console.log('[Retell] Phone Number:', retellWidget.getAttribute('data-phone-number'));
+                console.log('[Retell] reCAPTCHA Key:', retellWidget.getAttribute('data-recaptcha-key'));
+
+                // Check if reCAPTCHA is loaded
+                if (typeof grecaptcha !== 'undefined') {
+                    console.log('[Retell] ✓ reCAPTCHA loaded successfully');
+                } else {
+                    console.error('[Retell] ✗ reCAPTCHA not loaded! Widget will not work.');
+                }
             } else {
                 console.error('[Retell] Widget script tag not found!');
             }
-        }, 1000);
+        }, 2000);
     </script>
 
     <script
