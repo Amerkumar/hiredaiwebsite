@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HiredAI Labs - Builder Mindset Solutions</title>
-    <meta name="description" content="HiredAI Labs builds innovative solutions with a builder mindset. Discover Rewind, a privacy-first photo cleanup app, and explore our other products.">
+    <title>HiredAI Labs - Simple, Focused Products</title>
+    <meta name="description" content="HiredAI Labs builds simple, focused products that solve real problems. ReceptorAI for dental practices. Rewind for photo cleanup.">
     <link rel="stylesheet" href="styles.css">
 
     <!-- Google Analytics 4 -->
@@ -19,36 +19,19 @@
             'anonymize_ip': true,
             'cookie_flags': 'SameSite=None;Secure'
         });
-
-        // Track JavaScript errors automatically
-        window.addEventListener('error', function(e) {
-            gtag('event', 'exception', {
-                'description': e.message + ' @ ' + e.filename + ':' + e.lineno,
-                'fatal': false
-            });
-        });
-
-        // Track unhandled promise rejections
-        window.addEventListener('unhandledrejection', function(e) {
-            gtag('event', 'exception', {
-                'description': 'Unhandled Promise: ' + e.reason,
-                'fatal': false
-            });
-        });
     </script>
 </head>
 <body>
     <!-- Navigation -->
     <nav id="navbar">
         <div class="nav-container">
-            <a href="#" class="logo">HiredAI Labs</a>
+            <a href="index.html" class="logo">HiredAI Labs</a>
             <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
             <ul class="nav-links" id="navLinks">
-                <li><a href="#about">About</a></li>
                 <li><a href="#products">Products</a></li>
                 <li><a href="#philosophy">Philosophy</a></li>
-                <li><a href="#contact" class="btn-primary" id="openContactBtn">Contact</a></li>
-                <li><a href="privacy.html">Privacy Policy</a></li>
+                <li><a href="privacy.html">Privacy</a></li>
+                <li><a href="#contact" class="btn-primary">Contact</a></li>
             </ul>
         </div>
     </nav>
@@ -56,130 +39,102 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <h1>Build with Purpose</h1>
-            <p>At HiredAI Labs, we embrace a builder mindset. We create thoughtful, user-focused solutions that solve real problems.</p>
+            <h1>Simple, Focused Products</h1>
+            <p>We build tools that solve real problems. Built with a builder's mindset and a commitment to privacy first.</p>
             <div class="hero-cta">
-                <a href="#products" class="btn-primary">Explore Our Products</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about">
-        <h2>Our Mission</h2>
-        <div class="about-content">
-            <p>We believe great products start with understanding user needs deeply. Our builder mindset means we:</p>
-            <div class="mission-grid">
-                <div class="mission-card fade-in">
-                    <div class="mission-icon">🎯</div>
-                    <h3>Focus on Impact</h3>
-                    <p>We build solutions that genuinely improve people's lives, not just chase trends.</p>
-                </div>
-                <div class="mission-card fade-in">
-                    <div class="mission-icon">🔒</div>
-                    <h3>Prioritize Privacy</h3>
-                    <p>Your data is yours. We never sell information or compromise user privacy for profit.</p>
-                </div>
-                <div class="mission-card fade-in">
-                    <div class="mission-icon">⚡</div>
-                    <h3>Keep It Simple</h3>
-                    <p>Complex problems deserve elegant solutions. We strip away unnecessary bloat.</p>
-                </div>
-                <div class="mission-card fade-in">
-                    <div class="mission-icon">🚀</div>
-                    <h3>Ship Fast, Iterate</h3>
-                    <p>We launch products and listen to feedback. Building is a continuous process.</p>
-                </div>
+                <a href="#products" class="btn-primary">See Our Products</a>
             </div>
         </div>
     </section>
 
     <!-- Products Section -->
-    <section id="products" class="products-section">
+    <section id="products" class="portfolio-section">
         <h2>Our Products</h2>
         
-        <!-- Rewind Product Feature -->
-        <div class="product-feature fade-in">
-            <div class="product-header">
-                <h3>Rewind</h3>
-                <p class="product-tagline">Photo cleanup with nostalgia as the hook</p>
+        <!-- Product 1: ReceptorAI -->
+        <div class="product-showcase">
+            <div class="product-info">
+                <h3>ReceptorAI</h3>
+                <p class="product-category">For Dental Practices</p>
+                <p>
+                    A 24/7 AI receptionist that handles patient calls, schedules appointments, and manages communications. 
+                    ReceptorAI integrates seamlessly with your practice management system and never sleeps.
+                </p>
+                <ul class="product-highlights">
+                    <li>✓ 24/7 availability for patient calls</li>
+                    <li>✓ Automatic appointment booking and rescheduling</li>
+                    <li>✓ Direct integration with OpenDental</li>
+                    <li>✓ PIPEDA compliant (Canadian privacy)</li>
+                    <li>✓ Seamless transfers to your staff</li>
+                </ul>
+                <a href="receptor-ai.html" class="btn-primary">Explore ReceptorAI</a>
             </div>
-            <div class="product-content">
-                <div class="product-description">
-                    <p>Every day, see photos from today's date across all previous years and swipe to keep or delete. Rewind makes cleaning your photo library a nostalgic journey instead of a chore.</p>
-                    <p><strong>Perfect for:</strong></p>
-                    <ul class="product-use-cases">
-                        <li>Reviewing old memories</li>
-                        <li>Cleaning up duplicate photos</li>
-                        <li>Finding forgotten gems from the past</li>
-                        <li>Managing storage space</li>
-                    </ul>
+            <div class="product-visual">
+                <div class="product-image-placeholder">
+                    <span>📞</span>
                 </div>
-                <div class="product-features">
-                    <h4>Key Features</h4>
-                    <ul class="features-list">
-                        <li>📅 <strong>Daily Memories:</strong> See photos from today's date across all previous years</li>
-                        <li>👆 <strong>Simple Swipes:</strong> Swipe right to keep, left to archive</li>
-                        <li>💾 <strong>Free Up Space:</strong> Clean your library while reminiscing</li>
-                        <li>🔒 <strong>Privacy First:</strong> Photos never leave your device—all processing is local</li>
-                        <li>🗑️ <strong>Safe Deletion:</strong> Photos move to Recently Deleted for 30-day recovery</li>
-                        <li>🎬 <strong>Video Support:</strong> Full video playback with controls</li>
-                        <li>↩️ <strong>Undo Support:</strong> Made a mistake? Undo your last action</li>
-                        <li>📊 <strong>Session History:</strong> Track all your sorting sessions</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="product-callout">
-                <p><strong>🔐 Privacy Guarantee:</strong> Your memories stay private. We never upload or share your photos.</p>
             </div>
         </div>
 
-        <!-- HiredAI for Dental Practices -->
-        <div class="product-feature fade-in">
-            <div class="product-header">
-                <h3>HiredAI for Dental Practices</h3>
-                <p class="product-tagline">AI Receptionist for Canadian Dental Clinics</p>
+        <!-- Product 2: Rewind -->
+        <div class="product-showcase reverse">
+            <div class="product-info">
+                <h3>Rewind</h3>
+                <p class="product-category">Photo Cleanup App</p>
+                <p>
+                    See photos from today's date across all your previous years and swipe to keep or delete. 
+                    Rewind makes photo cleanup a nostalgic journey. Your photos never leave your device—all processing is local.
+                </p>
+                <ul class="product-highlights">
+                    <li>✓ Daily memories from all your previous years</li>
+                    <li>✓ Simple swipe interface (keep or archive)</li>
+                    <li>✓ 100% local processing—photos never leave your device</li>
+                    <li>✓ Optional Google Sign In (works without signing in)</li>
+                    <li>✓ 30-day recovery for deleted photos</li>
+                </ul>
+                <a href="rewind.html" class="btn-primary">Explore Rewind</a>
             </div>
-            <div class="product-content">
-                <p>An AI-powered receptionist that handles patient calls, bookings, and customer service 24/7 for dental practices. Built specifically for the Canadian market with PIPEDA compliance.</p>
-                <p><a href="https://www.hiredai.ca" target="_blank" class="product-link">Learn more about HiredAI for Dentists →</a></p>
+            <div class="product-visual">
+                <div class="product-image-placeholder">
+                    <span>📸</span>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Philosophy Section -->
     <section id="philosophy">
-        <h2>How We Work</h2>
-        <div class="philosophy-content">
-            <div class="philosophy-item fade-in">
-                <div class="philosophy-number">1</div>
-                <h3>Understand the Problem</h3>
-                <p>We spend time understanding what users actually need, not what we think they need. Real problems, real solutions.</p>
+        <h2>Built with These Principles</h2>
+        <div class="principles-grid">
+            <div class="principle-card">
+                <div class="principle-number">1</div>
+                <h3>Privacy First</h3>
+                <p>Your data is yours. We never sell information or share it with third parties.</p>
             </div>
-            <div class="philosophy-item fade-in">
-                <div class="philosophy-number">2</div>
-                <h3>Build with Intention</h3>
-                <p>Every feature has a purpose. We ask "does this solve the problem?" before shipping anything.</p>
+            <div class="principle-card">
+                <div class="principle-number">2</div>
+                <h3>Simple & Focused</h3>
+                <p>We strip away unnecessary complexity. Each product does one thing really well.</p>
             </div>
-            <div class="philosophy-item fade-in">
-                <div class="philosophy-number">3</div>
-                <h3>Respect Privacy</h3>
-                <p>Default to local processing, minimal data collection, and transparent practices. Your trust is everything.</p>
+            <div class="principle-card">
+                <div class="principle-number">3</div>
+                <h3>Built for Users</h3>
+                <p>Every decision is based on what users actually need, not what's trendy.</p>
             </div>
-            <div class="philosophy-item fade-in">
-                <div class="philosophy-number">4</div>
-                <h3>Listen & Iterate</h3>
-                <p>Launch, gather feedback, improve. Building is never finished—it's a continuous conversation with users.</p>
+            <div class="principle-card">
+                <div class="principle-number">4</div>
+                <h3>Always Learning</h3>
+                <p>We launch, listen to feedback, and continuously improve.</p>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact">
-        <h2>Get In Touch</h2>
-        <p>Have questions or ideas? We'd love to hear from you.</p>
+        <h2>Let's Talk</h2>
+        <p>Questions? Ideas? We'd love to hear from you.</p>
         <div class="contact-cta">
-            <button class="btn-primary" id="openContactBtn">Send us a Message</button>
+            <button class="btn-primary" id="openContactBtn">Get in Touch</button>
         </div>
     </section>
 
@@ -187,8 +142,8 @@
     <div id="contactModal" class="modal">
         <div class="modal-content">
             <button class="modal-close" id="closeModal">&times;</button>
-            <h2>Contact HiredAI Labs</h2>
-            <p class="modal-subtitle">We'd love to hear from you. Questions, feedback, or partnership inquiries welcome.</p>
+            <h2>Get in Touch</h2>
+            <p class="modal-subtitle">Tell us about your needs or just say hi</p>
             <form id="contactForm">
                 <div class="form-group">
                     <label for="contactName">Your Name</label>
@@ -212,18 +167,19 @@
         <div class="footer-content">
             <div class="footer-section">
                 <h3>HiredAI Labs</h3>
-                <p>Building solutions with a builder mindset.</p>
-                <p class="footer-links">
-                    <a href="privacy.html">Privacy Policy</a> | 
-                    <a href="#about">About</a> | 
-                    <a href="#products">Products</a>
-                </p>
+                <p>Simple, focused products built with privacy first.</p>
             </div>
             <div class="footer-section">
                 <h3>Products</h3>
                 <ul>
-                    <li><a href="#products">Rewind - Photo Cleanup</a></li>
-                    <li><a href="https://www.hiredai.ca" target="_blank">HiredAI for Dentists</a></li>
+                    <li><a href="receptor-ai.html">ReceptorAI</a></li>
+                    <li><a href="rewind.html">Rewind</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
                 </ul>
             </div>
         </div>
