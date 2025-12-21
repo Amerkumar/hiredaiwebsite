@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HiredAI Labs - Small software, real problems</title>
-    <meta name="description" content="HiredAI Labs builds focused, useful software that solves real problems. Independent, bootstrapped, Canadian-built.">
+    <title>HiredAI Labs - Software that does the job</title>
+    <meta name="description" content="HiredAI Labs builds focused software that solves real problems. AI receptionists, productivity tools, and more. Based in Burnaby, BC.">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="home">
     <!-- Navigation -->
     <nav id="navbar">
         <div class="nav-container">
             <a href="/" class="logo">HiredAI Labs</a>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#products">Products</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="mailto:hello@hiredai.ca" class="nav-contact">Contact</a></li>
+                <li><a href="#philosophy">Philosophy</a></li>
+                <li><a href="mailto:tech@hiredai.ca" class="nav-contact">Get in Touch</a></li>
             </ul>
             <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
                 <span></span>
@@ -25,45 +25,72 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
+    <!-- Hero Section - Bold & Colorful -->
+    <section class="hero hero-home">
         <div class="hero-content">
-            <h1>Small software, real problems.</h1>
-            <p class="hero-subtitle">I build focused tools that do one thing well. No bloat, no BS, just software that works.</p>
+            <h1>We build software<br>that does the job.</h1>
+            <p class="hero-subtitle">Focused tools. Real problems. No fluff.</p>
+        </div>
+    </section>
+
+    <!-- Philosophy Section -->
+    <section id="philosophy" class="philosophy">
+        <div class="philosophy-content">
+            <div class="philosophy-grid">
+                <div class="philosophy-item" style="--accent: #FF6B35;">
+                    <h3>Small on purpose</h3>
+                    <p>We don't build platforms. We build tools that do one thing exceptionally well. If it doesn't need to exist, we don't build it.</p>
+                </div>
+                <div class="philosophy-item" style="--accent: #00A676;">
+                    <h3>Profit over growth</h3>
+                    <p>We're not chasing unicorn status. We build sustainable software that pays for itself from day one. No VC, no exit strategy, no bullshit.</p>
+                </div>
+                <div class="philosophy-item" style="--accent: #7B68EE;">
+                    <h3>Ship and iterate</h3>
+                    <p>We'd rather put something useful in your hands today than something perfect never. Real feedback beats hypothetical features every time.</p>
+                </div>
+                <div class="philosophy-item" style="--accent: #FF4757;">
+                    <h3>Opinionated software</h3>
+                    <p>Our tools make decisions so you don't have to. Less configuration, more getting things done. We're not trying to be everything to everyone.</p>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Products Section -->
-    <section id="products" class="products">
-        <h2>What I'm Building</h2>
-        <div class="products-grid">
-            <a href="hiredline.html" class="product-card">
-                <div class="product-icon">📞</div>
+    <section id="products" class="products-home">
+        <h2>What We're Building</h2>
+        <div class="products-grid-home">
+            <a href="hiredline.html" class="product-card-home product-trades">
+                <div class="product-badge">AI Receptionist</div>
                 <h3>HiredLine</h3>
-                <p class="product-tagline">Never miss a job again.</p>
-                <p class="product-description">AI receptionist for tradespeople and realtors. Answers calls 24/7, books to your calendar, sends confirmations.</p>
-                <span class="product-link">Learn more →</span>
+                <p class="product-tagline">For tradespeople & realtors</p>
+                <p class="product-desc">Your phone rings. We answer. Appointments booked, customers happy, you keep working.</p>
+                <span class="product-cta">$29/mo — Learn more →</span>
             </a>
-            <a href="rewind.html" class="product-card">
-                <div class="product-icon">📱</div>
+            <a href="dentists.html" class="product-card-home product-dental">
+                <div class="product-badge">AI Receptionist</div>
+                <h3>HiredLine for Dentists</h3>
+                <p class="product-tagline">For dental practices</p>
+                <p class="product-desc">24/7 patient scheduling, OpenDental integration, and a front desk that never calls in sick.</p>
+                <span class="product-cta">$199/mo — Learn more →</span>
+            </a>
+            <a href="rewind.html" class="product-card-home product-rewind">
+                <div class="product-badge">iOS App</div>
                 <h3>Rewind</h3>
-                <p class="product-tagline">Clean up your camera roll in minutes.</p>
-                <p class="product-description">Swipe right to keep, swipe left to delete. Simple, fast, satisfying photo cleanup.</p>
-                <span class="product-link">Learn more →</span>
+                <p class="product-tagline">Photo cleanup, fast</p>
+                <p class="product-desc">Swipe through years of photos in minutes. Keep the good ones, delete the rest.</p>
+                <span class="product-cta">Free — Learn more →</span>
             </a>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="about-content">
-            <h2>Why I Build</h2>
-            <div class="about-text">
-                <p>I'm a solo developer in Burnaby, BC. I build software because I like solving problems and making things that people actually use.</p>
-                <p>Every product here started with a real frustration. HiredLine came from watching tradespeople miss calls while on a job site. Rewind came from having 12,000 photos I'd never look at again.</p>
-                <p>I ship small, focused products. I iterate based on real usage. I don't take VC money or build features for hypothetical customers. If something doesn't work, I fix it or kill it.</p>
-                <p>That's it. No manifesto, no mission statement. Just craft software that does what it says.</p>
-            </div>
+    <!-- CTA Section -->
+    <section class="home-cta">
+        <div class="cta-content">
+            <h2>Let's talk.</h2>
+            <p>Got a problem that needs solving? We might be building the tool for it.</p>
+            <a href="mailto:tech@hiredai.ca" class="btn-primary">tech@hiredai.ca</a>
         </div>
     </section>
 
@@ -73,23 +100,25 @@
             <div class="footer-main">
                 <div class="footer-brand">
                     <span class="footer-logo">HiredAI Labs</span>
-                    <p class="footer-tagline">Tools that do one thing well.</p>
+                    <p class="footer-tagline">Software that does the job.</p>
+                    <p class="footer-location">Burnaby, BC, Canada</p>
                 </div>
                 <div class="footer-links">
                     <div class="footer-column">
                         <h4>Products</h4>
                         <a href="hiredline.html">HiredLine</a>
+                        <a href="dentists.html">HiredLine for Dentists</a>
                         <a href="rewind.html">Rewind</a>
                     </div>
                     <div class="footer-column">
-                        <h4>Connect</h4>
-                        <a href="mailto:hello@hiredai.ca">hello@hiredai.ca</a>
-                        <a href="https://twitter.com/hiredailabs" target="_blank">Twitter</a>
+                        <h4>Company</h4>
+                        <a href="#philosophy">Philosophy</a>
+                        <a href="mailto:tech@hiredai.ca">Contact</a>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 HiredAI Labs. Built in Burnaby, BC.</p>
+                <p>&copy; 2025 HiredAI Labs</p>
             </div>
         </div>
     </footer>
