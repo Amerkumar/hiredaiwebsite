@@ -1,4 +1,4 @@
-// HiredAI.ca JavaScript
+// HiredAI Labs JavaScript
 
 // Mobile Menu Toggle
 const mobileMenuBtn = document.getElementById('mobileMenuBtn');
