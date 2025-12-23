@@ -263,6 +263,11 @@ nav {
     gap: 1.5rem;
 }
 
+.products-grid-home.two-products {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 800px;
+}
+
 .product-card-home {
     display: flex;
     flex-direction: column;
@@ -826,6 +831,52 @@ nav {
 /* REWIND SPECIFIC      */
 /* ==================== */
 
+/* Screenshots Section */
+.screenshots-section {
+    padding: 4rem 2rem;
+    background: var(--white);
+    text-align: center;
+}
+
+.screenshots-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.screenshot-item {
+    flex: 1;
+    max-width: 250px;
+}
+
+.screenshot-placeholder {
+    aspect-ratio: 9/19.5;
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 600;
+    font-size: 1rem;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+}
+
+.screenshot-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 24px;
+}
+
+.screenshots-note {
+    margin-top: 2rem;
+    font-size: 0.85rem;
+    color: var(--light-gray);
+    font-style: italic;
+}
+
 .problem-section {
     padding: 5rem 2rem;
     background: var(--rewind-light);
@@ -1244,6 +1295,14 @@ footer {
 
     .problem-quote {
         font-size: 1.75rem;
+    }
+
+    .screenshots-container {
+        gap: 1rem;
+    }
+
+    .screenshot-item {
+        max-width: 150px;
     }
 
     .footer-main {

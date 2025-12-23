@@ -3,258 +3,385 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HiredLine for Dentists - AI Receptionist for Dental Practices | HiredAI Labs</title>
-    <meta name="description" content="AI voice receptionist built for dental practices. 24/7 patient scheduling, OpenDental integration, PIPEDA compliant. Never miss a patient call again.">
-    <link rel="stylesheet" type="text/css" href="./styles.css?v=2">
+    <title>HiredLine for Dentists - AI Receptionist | HiredAI Labs</title>
+    <meta name="description" content="AI voice receptionist for Canadian dental practices. Trusted by hundreds of dental practices across Canada.">
+    <link rel="stylesheet" type="text/css" href="./dental-styles.css?v=2">
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4396TNYHF0"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-4396TNYHF0', {
+            'send_page_view': true,
+            'anonymize_ip': true,
+            'cookie_flags': 'SameSite=None;Secure'
+        });
+
+        // Track JavaScript errors automatically
+        window.addEventListener('error', function(e) {
+            gtag('event', 'exception', {
+                'description': e.message + ' @ ' + e.filename + ':' + e.lineno,
+                'fatal': false
+            });
+        });
+
+        // Track unhandled promise rejections
+        window.addEventListener('unhandledrejection', function(e) {
+            gtag('event', 'exception', {
+                'description': 'Unhandled Promise: ' + e.reason,
+                'fatal': false
+            });
+        });
+    </script>
 </head>
-<body class="product-page theme-dental">
+<body>
     <!-- Navigation -->
     <nav id="navbar">
         <div class="nav-container">
             <a href="/" class="logo">HiredAI Labs</a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#features">Features</a></li>
                 <li><a href="#pricing">Pricing</a></li>
                 <li><a href="#faq">FAQ</a></li>
-                <li><a href="mailto:tech@hiredai.ca" class="nav-contact">Contact</a></li>
+                <li><a href="#" class="btn-primary" id="openContactBtn">Contact</a></li>
             </ul>
-            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
         </div>
     </nav>
 
-    <!-- Product Hero -->
-    <section class="product-hero">
-        <div class="product-hero-content">
-            <a href="/" class="back-link">← HiredAI Labs</a>
-            <div class="product-label">HiredLine for Dentists</div>
-            <h1>Your front desk,<br>available 24/7.</h1>
-            <p class="product-hero-description">Patients call at 9pm. On weekends. During lunch. Our AI receptionist answers every call, books appointments, and integrates with your practice management software.</p>
-            <div class="product-hero-cta">
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to HiredAI, the AI Receptionist for Dentists</h1>
+            <p>Never miss a patient call again with 24/7 AI-powered reception</p>
+            <div class="hero-cta">
                 <a href="#pricing" class="btn-primary">See Pricing</a>
-                <a href="mailto:tech@hiredai.ca?subject=HiredLine%20for%20Dentists%20Demo" class="btn-secondary">Book a Demo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features">
+        <h2>Powerful Features for Your Practice</h2>
+        <div class="features-grid">
+            <div class="feature-card fade-in">
+                <div class="feature-icon">📞</div>
+                <h3>OmniChannel</h3>
+                <p>Handle patient communications seamlessly across phone calls and text messages, ensuring no inquiry goes unanswered.</p>
+            </div>
+            <div class="feature-card fade-in">
+                <div class="feature-icon">📅</div>
+                <h3>Powerful Scheduling</h3>
+                <p>Effortlessly book, cancel, and reschedule appointments 24/7. Our AI handles it all with perfect accuracy.</p>
+            </div>
+            <div class="feature-card fade-in">
+                <div class="feature-icon">🔗</div>
+                <h3>Seamless Integrations</h3>
+                <p>Direct integration with OpenDental and other practice management systems. Your workflow stays uninterrupted.</p>
+            </div>
+            <div class="feature-card fade-in">
+                <div class="feature-icon">📊</div>
+                <h3>Stay in the Loop</h3>
+                <p>Receive comprehensive daily reports on all patient interactions, bookings, and important metrics.</p>
+            </div>
+            <div class="feature-card fade-in">
+                <div class="feature-icon">👥</div>
+                <h3>Human Transfer</h3>
+                <p>Complex situations? Our AI smoothly transfers calls to your staff when human touch is needed.</p>
+            </div>
+            <div class="feature-card fade-in">
+                <div class="feature-icon">⚙️</div>
+                <h3>Customize Call Flow</h3>
+                <p>Tailor every aspect of patient interactions to match your practice's unique needs and brand voice.</p>
             </div>
         </div>
     </section>
 
     <!-- Stats Section -->
-    <section class="stats-section">
+    <section id="case-studies">
+        <h2>Why Dental Practices Choose HiredAI</h2>
         <div class="stats-grid">
-            <div class="stat-card">
-                <div class="stat-number">75%</div>
+            <div class="stat-card fade-in">
+                <div class="stat-number">75%<span class="citation" data-source="Canadian Dental Association Patient Survey 2024">¹</span></div>
                 <div class="stat-label">of patients prefer calling over online booking</div>
-                <a href="https://www.cda-adc.ca/" target="_blank" class="stat-source">Canadian Dental Association</a>
+                <a href="https://www.cda-adc.ca/" target="_blank" class="stat-source">Source: Canadian Dental Association Patient Survey 2024</a>
             </div>
-            <div class="stat-card">
-                <div class="stat-number">30%</div>
-                <div class="stat-label">of appointments missed from after-hours calls</div>
-                <a href="https://www.ada.org/" target="_blank" class="stat-source">ADA Study</a>
+            <div class="stat-card fade-in">
+                <div class="stat-number">30%<span class="citation" data-source="Dental Practice Management Study 2024">²</span></div>
+                <div class="stat-label">of appointments are missed from after-hours calls</div>
+                <a href="https://www.ada.org/" target="_blank" class="stat-source">Source: Dental Practice Management Study 2024</a>
             </div>
-            <div class="stat-card">
+            <div class="stat-card fade-in">
                 <div class="stat-number">24hrs</div>
                 <div class="stat-label">average setup time from signup to live</div>
             </div>
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section id="features" class="features-section">
-        <h2>Built for dental practices</h2>
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon">📞</div>
-                <h3>Phone & SMS</h3>
-                <p>Handle patient communications across calls and text messages. Every inquiry gets answered, every time.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">📅</div>
-                <h3>Smart Scheduling</h3>
-                <p>Book, cancel, and reschedule appointments 24/7. Our AI checks availability and avoids double-bookings automatically.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">🔗</div>
-                <h3>OpenDental Integration</h3>
-                <p>Direct sync with OpenDental and other practice management systems. No manual data entry, no workflow interruption.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">📊</div>
-                <h3>Daily Reports</h3>
-                <p>Every morning, get a summary of calls handled, appointments booked, and questions asked. Know what's happening.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">👥</div>
-                <h3>Human Transfer</h3>
-                <p>Complex cases or patient requests? Calls transfer seamlessly to your staff when the human touch is needed.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">⚙️</div>
-                <h3>Your Voice, Your Rules</h3>
-                <p>Customize every interaction to match your practice's protocols, personality, and brand.</p>
-            </div>
-        </div>
-    </section>
-
     <!-- Pricing Section -->
     <section id="pricing" class="pricing-section">
-        <h2>Simple, transparent pricing</h2>
-        <div class="pricing-card-large">
-            <div class="pricing-header">
-                <div class="pricing-badge">Professional Plan</div>
-                <div class="pricing-amount">$199<span>/month</span></div>
-                <div class="pricing-subtext">+ $0.35 per minute of call time</div>
-            </div>
-            <div class="pricing-body">
-                <div class="pricing-features-grid">
-                    <ul class="pricing-features">
-                        <li>AI voice receptionist</li>
-                        <li>SMS patient communications</li>
-                        <li>Call transfers to staff</li>
-                        <li>Google & Apple Calendar sync</li>
-                        <li>Appointment management</li>
-                    </ul>
-                    <ul class="pricing-features">
-                        <li>Real-time analytics dashboard</li>
-                        <li>Daily automated reports</li>
-                        <li>OpenDental integration</li>
-                        <li>Dedicated support</li>
-                        <li>No long-term contract</li>
-                    </ul>
+        <h2>Simple, Transparent Pricing</h2>
+        <div class="pricing-container">
+            <div class="pricing-card fade-in">
+                <div class="pricing-header">
+                    <div class="pricing-badge">PROFESSIONAL PLAN</div>
+                    <div class="pricing-amount">$199<span>/month</span></div>
+                    <div class="pricing-subtext">Plus $0.35 per minute of AI calling</div>
                 </div>
-                <p class="pricing-note">Most practices average 2-4 minutes per call. That's $0.70-$1.40 per booked appointment.</p>
-                <div class="pricing-cta">
-                    <a href="mailto:tech@hiredai.ca?subject=HiredLine%20for%20Dentists%20-%20Get%20Started" class="btn-primary">Get Started</a>
+                <div class="pricing-body">
+                    <ul class="pricing-features">
+                        <li>AI receptionist voice calling feature</li>
+                        <li>SMS integration for patient communications</li>
+                        <li>Seamless transfers to front desk when needed</li>
+                        <li>Google & Apple Calendar integration</li>
+                        <li>Complete appointment management (book, reschedule, cancel)</li>
+                        <li>Real-time analytics dashboard</li>
+                        <li>Daily reports generated automatically</li>
+                        <li>Custom integrations with dental software</li>
+                        <li>Dedicated support team</li>
+                    </ul>
+                    <div class="pricing-cta">
+                        <a href="#" class="btn-primary open-contact-btn">Get Started Today</a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- FAQ Section -->
-    <section id="faq" class="faq-section">
-        <h2>Questions</h2>
-        <div class="faq-list">
-            <div class="faq-item">
+    <section id="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-container">
+            <div class="faq-item fade-in">
                 <button class="faq-question">
-                    <span>How quickly can we get set up?</span>
+                    <span>How quickly can HiredAI be set up for my practice?</span>
                     <span class="faq-icon">+</span>
                 </button>
                 <div class="faq-answer">
-                    <p>Most practices are live within 3-5 business days. We'll need your hours, services, appointment types, and calendar access. We configure the system to match how your practice operates and test it before going live. Many practices start with after-hours calls only.</p>
+                    <p>Most practices are up and running within 3-5 business days. We'll need basic information like your practice hours, services offered, and appointment types. We'll configure the system to match how your practice operates, test it thoroughly, and train it on your specific protocols before going live. You can start with a soft launch where we handle overflow calls while you get comfortable with the system.</p>
                 </div>
             </div>
-            <div class="faq-item">
+            <div class="faq-item fade-in">
                 <button class="faq-question">
-                    <span>Does it work with our existing software?</span>
+                    <span>Does HiredAI work after hours and on weekends?</span>
                     <span class="faq-icon">+</span>
                 </button>
                 <div class="faq-answer">
-                    <p>We integrate with OpenDental and most practice management systems. Appointments sync directly with your existing calendar—no double-booking, no manual entry. If you use something else, we can discuss integration options.</p>
+                    <p>Yes, HiredAI works 24/7, including evenings, weekends, and holidays. Your patients can book appointments anytime, which means you'll never miss another call. Many practices find that a significant portion of bookings happen outside regular business hours when patients have time to think about their dental care.</p>
                 </div>
             </div>
-            <div class="faq-item">
+            <div class="faq-item fade-in">
                 <button class="faq-question">
-                    <span>Will patients know they're talking to AI?</span>
+                    <span>What happens if HiredAI can't answer a patient's question?</span>
                     <span class="faq-icon">+</span>
                 </button>
                 <div class="faq-answer">
-                    <p>Most patients don't notice—they just want to book an appointment. If someone asks directly, the AI will be honest. What matters is that their call got answered and their problem got solved quickly.</p>
+                    <p>If a patient asks something HiredAI isn't trained to handle, or if they request to speak with a real person, the system can either take a detailed message or transfer the call to your office (if someone is available). You'll receive a summary of every call, so you can follow up on anything that needs human attention. Over time, we refine the system based on these interactions to handle more situations automatically.</p>
                 </div>
             </div>
-            <div class="faq-item">
+            <div class="faq-item fade-in">
                 <button class="faq-question">
-                    <span>What if a patient needs to talk to a person?</span>
+                    <span>Does HiredAI work with my existing dental software?</span>
                     <span class="faq-icon">+</span>
                 </button>
                 <div class="faq-answer">
-                    <p>No problem. Patients can request to speak with staff anytime. The AI will either transfer them (if someone's available) or take a detailed message with callback info. You control the patient experience.</p>
+                    <p>HiredAI integrates with most practice management systems including OpenDental. We can sync appointments directly with your existing calendar so there's no double-booking or manual data entry. If you use different software, we can discuss integration options during our initial consultation. At minimum, we can work with your Google Calendar while we build out specific integrations.</p>
                 </div>
             </div>
-            <div class="faq-item">
+            <div class="faq-item fade-in">
                 <button class="faq-question">
-                    <span>Can we keep our existing phone number?</span>
+                    <span>Will my existing phone number still work?</span>
                     <span class="faq-icon">+</span>
                 </button>
                 <div class="faq-answer">
-                    <p>Yes. We can forward your existing number to HiredLine during off-hours, or set it up as a backup when your front desk is busy. You keep complete control over when and how AI handles calls.</p>
+                    <p>Yes. We can either forward your existing number to HiredAI during off-hours, or set up HiredAI as a backup that kicks in when your front desk is busy or unavailable. You keep complete control over when and how HiredAI handles calls. Many practices start by having HiredAI handle after-hours calls only, then expand from there.</p>
                 </div>
             </div>
-            <div class="faq-item">
+            <div class="faq-item fade-in">
                 <button class="faq-question">
-                    <span>Is there a contract?</span>
+                    <span>How much does HiredAI cost?</span>
                     <span class="faq-icon">+</span>
                 </button>
                 <div class="faq-answer">
-                    <p>No long-term contracts. Month-to-month, cancel with 30 days notice. We want you to stay because the service works, not because you're locked in.</p>
+                    <p>HiredAI costs $199 per month plus $0.35 per minute of call time. There are no setup fees or long-term contracts. Most dental practices average 2-4 minutes per call, which means you're typically paying $0.70-$1.40 per appointment booked. Compare this to missed appointments (average $200+ lost revenue per no-show) or hiring additional front desk staff, and the ROI is clear. We'll provide detailed usage reports so you can track exactly what you're spending.</p>
                 </div>
             </div>
-            <div class="faq-item">
+            <div class="faq-item fade-in">
                 <button class="faq-question">
-                    <span>What about PIPEDA compliance?</span>
+                    <span>Is there a contract or can I cancel anytime?</span>
                     <span class="faq-icon">+</span>
                 </button>
                 <div class="faq-answer">
-                    <p>We follow PIPEDA fully. We only collect what's needed to book appointments—names, phone numbers, appointment times. No clinical records, no treatment notes, no billing info. All data is encrypted, and we'll sign a DPA if you need one.</p>
+                    <p>No long-term contracts required. We operate on a month-to-month basis because we're confident you'll see the value. If you decide HiredAI isn't right for your practice, you can cancel with 30 days' notice. We want you to stay because the service works, not because you're locked into a contract.</p>
                 </div>
             </div>
-            <div class="faq-item">
+            <div class="faq-item fade-in">
                 <button class="faq-question">
-                    <span>Can patients reschedule or cancel through the AI?</span>
+                    <span>Will my patients know they're talking to AI?</span>
                     <span class="faq-icon">+</span>
                 </button>
                 <div class="faq-answer">
-                    <p>Yes. Patients call, the AI handles the change, your calendar updates automatically, and they get a text confirmation. Reduces no-shows and saves your front desk significant time.</p>
+                    <p>HiredAI sounds natural and professional - most patients don't realize they're speaking with AI. However, if asked directly, the system will honestly identify itself as an AI assistant. What matters most is that patients get their questions answered and appointments booked quickly and accurately. In our experience, patients care more about convenience and getting scheduled fast than whether they're talking to AI or a human.</p>
                 </div>
             </div>
-            <div class="faq-item">
+            <div class="faq-item fade-in">
                 <button class="faq-question">
-                    <span>What if the AI makes a mistake?</span>
+                    <span>What if a patient prefers to speak with a real person?</span>
                     <span class="faq-icon">+</span>
                 </button>
                 <div class="faq-answer">
-                    <p>Every call is logged and recorded. If something's booked incorrectly, adjust it like you would any front desk booking. We continuously tune the system based on your feedback. Most practices find the error rate is lower than human staff for routine appointments.</p>
+                    <p>No problem. Patients can request to speak with your office staff at any time, and HiredAI will either transfer them (if someone is available) or take a detailed message with callback information. You maintain full control over the patient experience. Some practices configure HiredAI to handle routine bookings while more complex cases go directly to staff.</p>
+                </div>
+            </div>
+            <div class="faq-item fade-in">
+                <button class="faq-question">
+                    <span>Can patients reschedule or cancel appointments through HiredAI?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Yes. Patients can cancel or reschedule their appointments by calling your practice number. HiredAI will update your calendar automatically and send confirmation via text message. This reduces no-shows and saves your front desk significant time managing schedule changes.</p>
+                </div>
+            </div>
+            <div class="faq-item fade-in">
+                <button class="faq-question">
+                    <span>What if HiredAI makes a mistake?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Every call is recorded and logged, so you can review any appointment or interaction. If HiredAI books something incorrectly, you can easily adjust it in your calendar just like you would with any front desk booking. We continuously monitor performance and fine-tune the system based on your feedback. Most practices find the error rate is actually lower than human staff, especially for routine appointments.</p>
+                </div>
+            </div>
+            <div class="faq-item fade-in">
+                <button class="faq-question">
+                    <span>How do I know if HiredAI is working well for my practice?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>You'll receive daily summary reports showing all calls handled, appointments booked, and common patient questions. We also provide a dashboard where you can see call volume, booking rates, and missed opportunities in real-time. We'll schedule regular check-ins to review performance and make adjustments based on your practice's needs.</p>
+                </div>
+            </div>
+            <div class="faq-item fade-in">
+                <button class="faq-question">
+                    <span>What information do I need to provide to get started?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>We'll need basic practice information: your hours, services offered (cleanings, exams, emergencies, etc.), appointment durations, insurance acceptance, and any specific protocols you want HiredAI to follow. We'll also need access to your appointment calendar. Our onboarding process guides you through this step-by-step, and we handle the technical setup for you.</p>
+                </div>
+            </div>
+            <div class="faq-item fade-in">
+                <button class="faq-question">
+                    <span>Can I try HiredAI before committing?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Yes. We can set up a demo with your actual practice information so you can test how HiredAI handles real patient scenarios. Some practices start with a pilot period handling only after-hours calls before expanding to full-time coverage. We want you to feel confident that HiredAI is the right fit for your practice.</p>
+                </div>
+            </div>
+            <div class="faq-item fade-in">
+                <button class="faq-question">
+                    <span>Is HiredAI compliant with Canadian privacy laws?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Yes. HiredAI follows PIPEDA, Canada's federal privacy law for businesses. We only collect patient information needed to book appointments and answer basic questions - things like names, phone numbers, and appointment times. All data is encrypted and securely stored, and we're happy to sign a Data Processing Agreement that outlines exactly how we protect your patients' information. </p>
+                </div>
+            </div>
+            <div class="faq-item fade-in">
+                <button class="faq-question">
+                    <span>What patient information can HiredAI see?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>We only access what's necessary to help your patients book appointments: their names, phone numbers, and appointment details. We do not access clinical records, treatment notes, billing information, or anything stored in your dental software. Think of us like a front desk receptionist - we only see what's needed to schedule appointments and answer general practice questions. Your patient records and clinical data remain completely private in your practice management system.</p>
+                </div>
+            </div>
+            <div class="faq-item fade-in">
+                <button class="faq-question">
+                    <span>Where is my data stored?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>We use Airtable for managing appointment data, which stores information on secure, encrypted servers. While these servers are located in the United States, this is common and legally compliant for Canadian businesses - similar to how many dental practices use services like Gmail, Dropbox, or Microsoft Office. All your data is encrypted and protected with the same security standards used by banks and healthcare organizations. If your practice has specific requirements about data storage location, we're happy to discuss custom solutions.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="product-cta-section">
-        <h2>Stop missing patient calls.</h2>
-        <p>Every missed call is revenue walking out the door. Let's fix that.</p>
-        <a href="mailto:tech@hiredai.ca?subject=HiredLine%20for%20Dentists" class="btn-primary">Get Started — $199/mo</a>
-    </section>
+    <!-- Contact Form Modal -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" id="closeModal">&times;</button>
+            <h2>Contact Us</h2>
+            <p class="modal-subtitle">Send us a message and we'll get back to you shortly</p>
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="contactName">Your Name</label>
+                    <input type="text" id="contactName" name="name" required placeholder="Enter your name">
+                </div>
+                <div class="form-group">
+                    <label for="contactEmail">Your Email</label>
+                    <input type="email" id="contactEmail" name="email" required placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="contactMessage">Message</label>
+                    <textarea id="contactMessage" name="message" required placeholder="Tell us how we can help you" rows="5"></textarea>
+                </div>
+                <button type="submit" class="btn-primary btn-submit">Send Message</button>
+            </form>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer>
         <div class="footer-content">
-            <div class="footer-main">
-                <div class="footer-brand">
-                    <span class="footer-logo">HiredAI Labs</span>
-                    <p class="footer-tagline">Software that does the job.</p>
-                    <p class="footer-location">Burnaby, BC, Canada</p>
-                </div>
-                <div class="footer-links">
-                    <div class="footer-column">
-                        <h4>Products</h4>
-                        <a href="hiredline.html">HiredLine</a>
-                        <a href="dentists.html">HiredLine for Dentists</a>
-                        <a href="rewind.html">Rewind</a>
-                    </div>
-                    <div class="footer-column">
-                        <h4>Company</h4>
-                        <a href="/#philosophy">Philosophy</a>
-                        <a href="mailto:tech@hiredai.ca">Contact</a>
-                    </div>
-                </div>
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p><strong>Email:</strong> <a href="mailto:tech@hiredai.ca">tech@hiredai.ca</a></p>
+                <p><strong>Phone:</strong> <a href="tel:+12368827114">+1 (236) 882-7114</a></p>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 HiredAI Labs</p>
-            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 HiredAI.ca - All rights reserved. Based in Vancouver, BC, Canada 🍁</p>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- JavaScript -->
+    <script src="dental-script.js"></script>
+
+    <!-- EmailJS SDK for direct email sending -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        // Initialize EmailJS with your public key
+        // SETUP REQUIRED: Replace 'YOUR_PUBLIC_KEY' with your actual EmailJS public key
+        // Get it from: https://dashboard.emailjs.com/admin/account
+        (function(){
+            emailjs.init({
+                publicKey: 'vlMZy8HjoWAXlNWIg', // Replace with your EmailJS public key
+            });
+        })();
+    </script>
+
+    <!-- Google reCAPTCHA v2 - Required for Retell Widget -->
+    <!-- Load synchronously (no async/defer) to ensure it's ready when widget loads -->
+    <script src="https://www.google.com/recaptcha/api.js?render=6LfnxyYsAAAAAE6mqyYHBmyOIpXZ7lH4bNopPPhi"></script>
+
+    <script
+      id="retell-widget"
+      src="https://dashboard.retellai.com/retell-widget.js"
+      type="module"
+      data-public-key="public_key_ceca039fccdec4823f101"
+      data-agent-id="agent_220a7641da24c62dc4fdfe6b6d"
+      data-widget="callback"
+      data-phone-number="+12362059994"
+      data-title="Request a Call"
+      data-countries="US,CA"
+      data-tc="https://www.hiredai.ca"
+      data-color="#FFA07A"
+      data-recaptcha-key="6LfnxyYsAAAAAE6mqyYHBmyOIpXZ7lH4bNopPPhi"
+    ></script>
 </body>
 </html>
