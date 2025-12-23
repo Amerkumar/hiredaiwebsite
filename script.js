@@ -62,3 +62,99 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
+
+// Contact Modal
+const contactModal = document.getElementById('contactModal');
+const openContactBtn = document.getElementById('openContactBtn');
+const openContactBtns = document.querySelectorAll('.open-contact-btn');
+const closeModalBtn = document.getElementById('closeModal');
+const contactForm = document.getElementById('contactForm');
+
+function openModal() {
+    if (contactModal) {
+        contactModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+function closeModal() {
+    if (contactModal) {
+        contactModal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+}
+
+if (openContactBtn) {
+    openContactBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        openModal();
+    });
+}
+
+openContactBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        openModal();
+    });
+});
+
+if (closeModalBtn) {
+    closeModalBtn.addEventListener('click', closeModal);
+}
+
+if (contactModal) {
+    contactModal.addEventListener('click', (e) => {
+        if (e.target === contactModal) {
+            closeModal();
+        }
+    });
+}
+
+// Close modal on escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && contactModal && contactModal.classList.contains('active')) {
+        closeModal();
+    }
+});
+
+// Contact Form Submission with EmailJS
+if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const submitBtn = contactForm.querySelector('.btn-submit');
+        const originalText = submitBtn.textContent;
+        submitBtn.textContent = 'Sending...';
+        submitBtn.disabled = true;
+
+        // EmailJS send
+        if (typeof emailjs !== 'undefined') {
+            emailjs.sendForm('service_hiredai', 'template_contact', this)
+                .then(function() {
+                    submitBtn.textContent = 'Sent!';
+                    contactForm.reset();
+                    setTimeout(() => {
+                        closeModal();
+                        submitBtn.textContent = originalText;
+                        submitBtn.disabled = false;
+                    }, 1500);
+                }, function(error) {
+                    console.error('EmailJS error:', error);
+                    submitBtn.textContent = 'Error - Try Again';
+                    submitBtn.disabled = false;
+                    setTimeout(() => {
+                        submitBtn.textContent = originalText;
+                    }, 2000);
+                });
+        } else {
+            // Fallback if EmailJS not loaded
+            const name = document.getElementById('contactName').value;
+            const email = document.getElementById('contactEmail').value;
+            const message = document.getElementById('contactMessage').value;
+            window.location.href = `mailto:tech@hiredai.ca?subject=Contact from ${name}&body=${encodeURIComponent(message)}%0A%0AFrom: ${email}`;
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+            closeModal();
+        }
+    });
+}

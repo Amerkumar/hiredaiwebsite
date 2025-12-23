@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HiredAI Labs - Software that does the job</title>
     <meta name="description" content="HiredAI Labs builds focused software that solves real problems. AI receptionists, productivity tools, and more. Based in Burnaby, BC.">
-    <link rel="stylesheet" type="text/css" href="./styles.css?v=2">
+    <link rel="stylesheet" type="text/css" href="./styles.css?v=3">
 </head>
 <body class="home">
     <!-- Navigation -->
@@ -15,7 +15,7 @@
             <ul class="nav-links" id="navLinks">
                 <li><a href="#products">Products</a></li>
                 <li><a href="#philosophy">Philosophy</a></li>
-                <li><a href="mailto:tech@hiredai.ca" class="nav-contact">Get in Touch</a></li>
+                <li><a href="#" class="nav-contact" id="openContactBtn">Contact</a></li>
             </ul>
             <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
                 <span></span>
@@ -63,16 +63,16 @@
         <div class="products-grid-home two-products">
             <a href="dentists.html" class="product-card-home product-dental">
                 <div class="product-badge">AI Receptionist</div>
-                <h3>HiredLine for Dentists</h3>
+                <h3>HiredLine</h3>
                 <p class="product-tagline">For dental practices</p>
                 <p class="product-desc">24/7 patient scheduling, OpenDental integration, and a front desk that never calls in sick.</p>
                 <span class="product-cta">$199/mo — Learn more →</span>
             </a>
             <a href="rewind.html" class="product-card-home product-rewind">
-                <div class="product-badge">iOS App</div>
+                <div class="product-badge">Mobile App</div>
                 <h3>Rewind</h3>
-                <p class="product-tagline">Photo cleanup, fast</p>
-                <p class="product-desc">Swipe through years of photos in minutes. Keep the good ones, delete the rest.</p>
+                <p class="product-tagline">Daily memories, cleaner storage</p>
+                <p class="product-desc">See photos from this day in previous years. Swipe to keep or delete. Reclaim your storage.</p>
                 <span class="product-cta">Free — Learn more →</span>
             </a>
         </div>
@@ -83,38 +83,57 @@
         <div class="cta-content">
             <h2>Let's talk.</h2>
             <p>Got a problem that needs solving? We might be building the tool for it.</p>
-            <a href="mailto:tech@hiredai.ca" class="btn-primary">tech@hiredai.ca</a>
+            <a href="#" class="btn-primary open-contact-btn">Get in Touch</a>
         </div>
     </section>
+
+    <!-- Contact Form Modal -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" id="closeModal">&times;</button>
+            <h2>Contact Us</h2>
+            <p class="modal-subtitle">Send us a message and we'll get back to you shortly</p>
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="contactName">Your Name</label>
+                    <input type="text" id="contactName" name="name" required placeholder="Enter your name">
+                </div>
+                <div class="form-group">
+                    <label for="contactEmail">Your Email</label>
+                    <input type="email" id="contactEmail" name="email" required placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="contactMessage">Message</label>
+                    <textarea id="contactMessage" name="message" required placeholder="Tell us how we can help you" rows="5"></textarea>
+                </div>
+                <button type="submit" class="btn-primary btn-submit">Send Message</button>
+            </form>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer>
         <div class="footer-content">
-            <div class="footer-main">
-                <div class="footer-brand">
-                    <span class="footer-logo">HiredAI Labs</span>
-                    <p class="footer-tagline">Software that does the job.</p>
-                    <p class="footer-location">Burnaby, BC, Canada</p>
-                </div>
-                <div class="footer-links">
-                    <div class="footer-column">
-                        <h4>Products</h4>
-                        <a href="dentists.html">HiredLine for Dentists</a>
-                        <a href="rewind.html">Rewind</a>
-                    </div>
-                    <div class="footer-column">
-                        <h4>Company</h4>
-                        <a href="#philosophy">Philosophy</a>
-                        <a href="mailto:tech@hiredai.ca">Contact</a>
-                    </div>
-                </div>
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p><strong>Email:</strong> <a href="mailto:tech@hiredai.ca">tech@hiredai.ca</a></p>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 HiredAI Labs</p>
-            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 HiredAI Labs - All rights reserved. Based in Burnaby, BC, Canada</p>
         </div>
     </footer>
 
     <script src="script.js"></script>
+
+    <!-- EmailJS SDK for direct email sending -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init({
+                publicKey: 'vlMZy8HjoWAXlNWIg',
+            });
+        })();
+    </script>
 </body>
 </html>
