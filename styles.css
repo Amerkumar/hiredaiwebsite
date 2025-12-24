@@ -1304,65 +1304,53 @@ nav {
 footer {
     background: var(--black);
     color: var(--white);
-    padding: 4rem 2rem 2rem;
+    padding: 3rem 2rem;
 }
 
 .footer-content {
     max-width: 1100px;
     margin: 0 auto;
+    text-align: center;
 }
 
-.footer-main {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 3rem;
+.footer-simple {
+    margin-bottom: 1.5rem;
 }
 
-.footer-logo {
-    font-size: 1.25rem;
-    font-weight: 700;
-    display: block;
+.footer-simple .footer-location {
+    color: var(--light-gray);
+    font-size: 0.95rem;
     margin-bottom: 0.5rem;
 }
 
-.footer-tagline {
-    color: var(--light-gray);
-    font-size: 0.95rem;
-    margin-bottom: 0.25rem;
-}
-
-.footer-location {
-    color: var(--light-gray);
-    font-size: 0.9rem;
-}
-
-.footer-links {
-    display: flex;
-    gap: 4rem;
-}
-
-.footer-column h4 {
-    color: var(--light-gray);
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-bottom: 1rem;
-    font-weight: 600;
-}
-
-.footer-column a {
-    display: block;
+.footer-simple .footer-email a {
     color: var(--white);
-    font-size: 0.95rem;
-    margin-bottom: 0.5rem;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: opacity 0.3s ease;
 }
 
-.footer-column a:hover {
+.footer-simple .footer-email a:hover {
+    opacity: 0.8;
+}
+
+.footer-simple .footer-legal {
+    margin-top: 0.5rem;
+}
+
+.footer-simple .footer-legal a {
+    color: var(--light-gray);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: opacity 0.3s ease;
+}
+
+.footer-simple .footer-legal a:hover {
     opacity: 0.8;
 }
 
 .footer-bottom {
-    padding-top: 2rem;
+    padding-top: 1.5rem;
     border-top: 1px solid rgba(255,255,255,0.1);
     color: var(--light-gray);
     font-size: 0.9rem;

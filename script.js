@@ -127,30 +127,39 @@ if (contactForm) {
         submitBtn.textContent = 'Sending...';
         submitBtn.disabled = true;
 
-        // EmailJS send
+        // Get form values
+        const name = document.getElementById('contactName').value;
+        const email = document.getElementById('contactEmail').value;
+        const message = document.getElementById('contactMessage').value;
+
+        // EmailJS send - using same config as dental page
         if (typeof emailjs !== 'undefined') {
-            emailjs.sendForm('service_hiredai', 'template_contact', this)
-                .then(function() {
-                    submitBtn.textContent = 'Sent!';
-                    contactForm.reset();
-                    setTimeout(() => {
-                        closeModal();
-                        submitBtn.textContent = originalText;
-                        submitBtn.disabled = false;
-                    }, 1500);
-                }, function(error) {
-                    console.error('EmailJS error:', error);
-                    submitBtn.textContent = 'Error - Try Again';
+            emailjs.send('service_wdbvfs9', 'template_gn0ql9h', {
+                from_name: name,
+                reply_to: email,
+                message: message,
+                to_email: 'tech@hiredai.ca'
+            })
+            .then(function() {
+                submitBtn.textContent = 'Sent!';
+                contactForm.reset();
+                setTimeout(() => {
+                    closeModal();
+                    submitBtn.textContent = originalText;
                     submitBtn.disabled = false;
-                    setTimeout(() => {
-                        submitBtn.textContent = originalText;
-                    }, 2000);
-                });
+                    alert('Thank you! Your message has been sent successfully.');
+                }, 1000);
+            }, function(error) {
+                console.error('EmailJS error:', error);
+                // Fallback to mailto
+                alert('There was an issue. Opening your email client instead...');
+                window.location.href = `mailto:tech@hiredai.ca?subject=Contact from ${name}&body=${encodeURIComponent(message)}%0A%0AFrom: ${email}`;
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+                closeModal();
+            });
         } else {
             // Fallback if EmailJS not loaded
-            const name = document.getElementById('contactName').value;
-            const email = document.getElementById('contactEmail').value;
-            const message = document.getElementById('contactMessage').value;
             window.location.href = `mailto:tech@hiredai.ca?subject=Contact from ${name}&body=${encodeURIComponent(message)}%0A%0AFrom: ${email}`;
             submitBtn.textContent = originalText;
             submitBtn.disabled = false;
