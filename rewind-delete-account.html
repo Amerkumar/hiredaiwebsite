@@ -79,6 +79,12 @@
             font-size: 1.5rem;
         }
 
+        .info-section p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
         .data-list {
             list-style: none;
             padding: 0;
@@ -139,6 +145,12 @@
             font-size: 0.95rem;
             font-weight: 600;
             margin-bottom: 0.5rem;
+        }
+
+        .form-group .label-note {
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.85rem;
         }
 
         .form-group input,
@@ -235,6 +247,12 @@
             margin-bottom: 0.75rem;
         }
 
+        .alternative-method p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
         .alternative-method a {
             color: #7B68EE;
             text-decoration: none;
@@ -262,6 +280,22 @@
 
         .warning-note strong {
             color: #DC3545;
+        }
+
+        .privacy-link {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .privacy-link a {
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .privacy-link a:hover {
+            color: #7B68EE;
+            text-decoration: underline;
         }
 
         /* Dark Footer */
@@ -310,6 +344,7 @@
             <a href="/" class="logo">HiredAI Labs</a>
             <ul class="nav-links" id="navLinks">
                 <li><a href="rewind.html">Back to Rewind</a></li>
+                <li><a href="rewind-privacy.html">Privacy Policy</a></li>
                 <li><a href="mailto:tech@hiredai.ca" class="nav-contact">Contact</a></li>
             </ul>
             <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
@@ -323,28 +358,33 @@
     <div class="delete-container">
         <div class="delete-header">
             <h1>Delete Your Rewind Account</h1>
-            <p>When you sign in with Google, Rewind stores some data in the cloud to sync your progress across devices. Use this page to request permanent deletion of your account and all associated data.</p>
+            <p>If you created an account using your phone number, Rewind stores some data in the cloud to sync your progress across devices. Use this page to request permanent deletion of your account and all associated data.</p>
         </div>
 
         <!-- What Data is Stored -->
         <div class="info-section">
-            <h2><span class="icon">📁</span> Data We Store</h2>
+            <h2><span class="icon">📁</span> Data We Store (Cloud)</h2>
+            <p>If you verified your phone number and created an account, we store:</p>
             <ul class="data-list">
-                <li>Email address (from Google Sign-In)</li>
-                <li>Streak count and streak history dates</li>
-                <li>Statistics: photos reviewed count, photos deleted count, storage saved</li>
-                <li>Sorted dates history (dates you've reviewed)</li>
+                <li>Phone number (used for account authentication via Firebase)</li>
+                <li>Name (optional, if you provided it)</li>
+                <li>Email address (optional, for weekly progress emails)</li>
+                <li>Streak count and streak history</li>
+                <li>Cleanup statistics: photos reviewed, photos archived, storage saved</li>
+                <li>Device information: model, OS version, app version</li>
                 <li>Last sync timestamp</li>
             </ul>
         </div>
 
         <!-- What Data is NOT Stored -->
         <div class="info-section">
-            <h2><span class="icon">🔒</span> Data We Do NOT Store</h2>
+            <h2><span class="icon">🔒</span> Data We NEVER Store</h2>
             <ul class="data-list not-stored">
                 <li>Your photos or videos</li>
                 <li>Any media files whatsoever</li>
                 <li>Photo metadata or thumbnails</li>
+                <li>Your contacts or address book</li>
+                <li>Your precise location</li>
             </ul>
             <div class="not-stored-note">
                 <strong>Your photos never leave your device.</strong> All photo processing happens locally on your phone. We only store statistics and sync data — never your actual media.
@@ -354,7 +394,7 @@
         <!-- Success Message (hidden by default) -->
         <div class="success-message" id="successMessage">
             <h3>Request Received</h3>
-            <p>Your deletion request has been received. Your account and all associated data will be permanently deleted within 7 days. You will receive a confirmation email once complete.</p>
+            <p>Your deletion request has been received. Your account and all associated data will be permanently deleted within 7 days. If you provided an email, you will receive a confirmation once complete.</p>
         </div>
 
         <!-- Deletion Request Form -->
@@ -362,11 +402,15 @@
             <h2>Request Account Deletion</h2>
             <form id="deleteForm">
                 <div class="form-group">
-                    <label for="deleteEmail">Email Address *</label>
-                    <input type="email" id="deleteEmail" name="email" required placeholder="The email you used for Google Sign-In">
+                    <label for="deletePhone">Phone Number *</label>
+                    <input type="tel" id="deletePhone" name="phone" required placeholder="The phone number you used to create your account">
                 </div>
                 <div class="form-group">
-                    <label for="deleteReason">Reason for Deletion (Optional)</label>
+                    <label for="deleteEmail">Email Address <span class="label-note">(for confirmation)</span></label>
+                    <input type="email" id="deleteEmail" name="email" placeholder="Optional: Email for deletion confirmation">
+                </div>
+                <div class="form-group">
+                    <label for="deleteReason">Reason for Deletion <span class="label-note">(Optional)</span></label>
                     <textarea id="deleteReason" name="reason" placeholder="Help us improve — why are you deleting your account?"></textarea>
                 </div>
                 <button type="submit" class="btn-delete" id="deleteBtn">Delete My Account</button>
@@ -376,12 +420,17 @@
         <!-- Alternative Method -->
         <div class="alternative-method">
             <h3>Prefer email?</h3>
-            <p>Send an email to <a href="mailto:tech@hiredai.ca?subject=Account%20Deletion%20Request">tech@hiredai.ca</a> with subject "Account Deletion Request"</p>
+            <p>Send an email to <a href="mailto:tech@hiredai.ca?subject=Rewind%20Account%20Deletion%20Request">tech@hiredai.ca</a> with subject "Rewind Account Deletion Request" and include your phone number.</p>
         </div>
 
         <!-- Warning Note -->
         <div class="warning-note">
             <p><strong>Warning:</strong> Deleting your account will permanently remove all cloud-synced data including your streak history and statistics. This action cannot be undone. Local data on your device will remain until you uninstall the app.</p>
+        </div>
+
+        <!-- Privacy Policy Link -->
+        <div class="privacy-link">
+            <a href="rewind-privacy.html">View our full Privacy Policy</a>
         </div>
     </div>
 
@@ -393,7 +442,7 @@
                 <p class="footer-email"><a href="mailto:tech@hiredai.ca">tech@hiredai.ca</a></p>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 HiredAI Labs</p>
+                <p>&copy; 2026 HiredAI Labs</p>
             </div>
         </div>
     </footer>
@@ -418,7 +467,8 @@
         deleteForm.addEventListener('submit', function(e) {
             e.preventDefault();
 
-            const email = document.getElementById('deleteEmail').value;
+            const phone = document.getElementById('deletePhone').value;
+            const email = document.getElementById('deleteEmail').value || 'Not provided';
             const reason = document.getElementById('deleteReason').value || 'No reason provided';
 
             deleteBtn.textContent = 'Submitting...';
@@ -426,9 +476,9 @@
 
             // Send via EmailJS
             emailjs.send('service_wdbvfs9', 'template_gn0ql9h', {
-                from_name: 'Account Deletion Request',
-                reply_to: email,
-                message: `ACCOUNT DELETION REQUEST\n\nEmail to delete: ${email}\n\nReason: ${reason}\n\nPlease delete all data associated with this email within 7 days.`,
+                from_name: 'Rewind Account Deletion Request',
+                reply_to: email !== 'Not provided' ? email : 'tech@hiredai.ca',
+                message: `REWIND ACCOUNT DELETION REQUEST\n\nPhone Number: ${phone}\nEmail: ${email}\n\nReason: ${reason}\n\nPlease delete all data associated with this phone number within 7 days.`,
                 to_email: 'tech@hiredai.ca'
             })
             .then(function() {
