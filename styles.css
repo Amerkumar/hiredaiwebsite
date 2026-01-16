@@ -1,0 +1,625 @@
+/* HiredAI Labs - Portal Styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Core Colors */
+    --black: #111;
+    --dark: #222;
+    --gray: #555;
+    --light-gray: #888;
+    --border: #ddd;
+    --bg-light: #f7f7f7;
+    --white: #fff;
+
+    /* Product Colors */
+    --trades-primary: #FF6B35;
+    --trades-dark: #E55A2B;
+    --trades-light: #FFF4F0;
+
+    --dental-primary: #00A676;
+    --dental-dark: #008F66;
+    --dental-light: #E6F9F3;
+
+    --rewind-primary: #7B68EE;
+    --rewind-dark: #6A5ACD;
+    --rewind-light: #F3F0FF;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    color: var(--dark);
+    line-height: 1.7;
+    font-size: 18px;
+    background: var(--white);
+}
+
+/* Typography */
+h1, h2, h3, h4 {
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--black);
+}
+
+h1 {
+    font-size: 3.5rem;
+    letter-spacing: -0.03em;
+}
+
+h2 {
+    font-size: 2.25rem;
+    margin-bottom: 1.5rem;
+}
+
+h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Navigation */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    border-bottom: 1px solid var(--border);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--black);
+}
+
+.nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+    align-items: center;
+}
+
+.nav-links a {
+    color: var(--gray);
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    color: var(--black);
+}
+
+.nav-contact {
+    background: var(--black);
+    color: var(--white) !important;
+    padding: 0.5rem 1.25rem;
+    border-radius: 6px;
+}
+
+.nav-contact:hover {
+    background: var(--dark);
+}
+
+.mobile-menu-btn {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.mobile-menu-btn span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--black);
+    transition: all 0.3s ease;
+}
+
+/* Buttons */
+.btn-primary {
+    display: inline-block;
+    background: var(--black);
+    color: var(--white);
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background: var(--dark);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    display: inline-block;
+    background: var(--white);
+    color: var(--black);
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    border: 2px solid var(--border);
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.btn-secondary:hover {
+    border-color: var(--black);
+}
+
+.btn-full {
+    width: 100%;
+    text-align: center;
+}
+
+/* ==================== */
+/* HOMEPAGE STYLES      */
+/* ==================== */
+
+.hero-home {
+    padding: 12rem 2rem 8rem;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    text-align: center;
+}
+
+.hero-home h1 {
+    color: var(--white);
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+}
+
+.hero-home .hero-subtitle {
+    color: rgba(255,255,255,0.7);
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+/* Philosophy Section */
+.philosophy {
+    padding: 6rem 2rem;
+    background: var(--white);
+}
+
+.philosophy-content {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.philosophy-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.philosophy-item {
+    padding: 2.5rem;
+    border-radius: 12px;
+    border-left: 4px solid var(--accent);
+    background: var(--bg-light);
+}
+
+.philosophy-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--accent);
+}
+
+.philosophy-item p {
+    color: var(--gray);
+    margin-bottom: 0;
+    line-height: 1.7;
+}
+
+/* Products Section - Homepage */
+.products-home {
+    padding: 6rem 2rem;
+    background: var(--bg-light);
+}
+
+.products-home h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.products-grid-home {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.products-grid-home.two-products {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 800px;
+}
+
+.product-card-home {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    border-radius: 16px;
+    background: var(--white);
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.product-card-home:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+}
+
+.product-badge {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+    opacity: 0.6;
+}
+
+.product-card-home h3 {
+    font-size: 1.75rem;
+    margin-bottom: 0.25rem;
+}
+
+.product-card-home .product-tagline {
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.product-card-home .product-desc {
+    color: var(--gray);
+    font-size: 0.95rem;
+    flex-grow: 1;
+    margin-bottom: 1.5rem;
+}
+
+.product-card-home .product-cta {
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+/* Product Card Colors */
+.product-trades { border-color: var(--trades-primary); }
+.product-trades .product-tagline,
+.product-trades .product-cta { color: var(--trades-primary); }
+.product-trades:hover { border-color: var(--trades-primary); background: var(--trades-light); }
+
+.product-dental { border-color: var(--dental-primary); }
+.product-dental .product-tagline,
+.product-dental .product-cta { color: var(--dental-primary); }
+.product-dental:hover { border-color: var(--dental-primary); background: var(--dental-light); }
+
+.product-rewind { border-color: var(--rewind-primary); }
+.product-rewind .product-tagline,
+.product-rewind .product-cta { color: var(--rewind-primary); }
+.product-rewind:hover { border-color: var(--rewind-primary); background: var(--rewind-light); }
+
+/* Home CTA */
+.home-cta {
+    padding: 6rem 2rem;
+    background: var(--black);
+    text-align: center;
+}
+
+.home-cta h2 {
+    color: var(--white);
+    margin-bottom: 1rem;
+}
+
+.home-cta p {
+    color: var(--light-gray);
+    margin-bottom: 2rem;
+}
+
+.home-cta .btn-primary {
+    background: var(--white);
+    color: var(--black);
+    font-size: 1.125rem;
+}
+
+.home-cta .btn-primary:hover {
+    background: var(--bg-light);
+}
+
+/* Contact Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+}
+
+.modal.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: var(--white);
+    padding: 3rem;
+    border-radius: 20px;
+    max-width: 500px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    position: relative;
+    animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-close {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: var(--gray);
+    cursor: pointer;
+    line-height: 1;
+    transition: all 0.3s ease;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.modal-close:hover {
+    background: var(--bg-light);
+    color: var(--black);
+    transform: rotate(90deg);
+}
+
+.modal-content h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    text-align: left;
+}
+
+.modal-subtitle {
+    color: var(--gray);
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--dark);
+    font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    border: 2px solid var(--border);
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: all 0.3s ease;
+    background: var(--white);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--black);
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.btn-submit {
+    width: 100%;
+    margin-top: 1rem;
+    font-size: 1.125rem;
+    padding: 1rem;
+}
+
+/* Footer */
+footer {
+    background: var(--black);
+    color: var(--white);
+    padding: 3rem 2rem;
+}
+
+.footer-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.footer-simple {
+    margin-bottom: 1.5rem;
+}
+
+.footer-simple .footer-location {
+    color: var(--light-gray);
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+}
+
+.footer-simple .footer-email a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 1rem;
+    transition: opacity 0.3s ease;
+}
+
+.footer-simple .footer-email a:hover {
+    opacity: 0.8;
+}
+
+.footer-bottom {
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    color: var(--light-gray);
+    font-size: 0.9rem;
+}
+
+/* ==================== */
+/* RESPONSIVE           */
+/* ==================== */
+
+@media (max-width: 900px) {
+    .products-grid-home {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+    }
+
+    .philosophy-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 16px;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-home h1 {
+        font-size: 2.75rem;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background: var(--white);
+        flex-direction: column;
+        padding: 2rem;
+        gap: 1.5rem;
+        border-bottom: 1px solid var(--border);
+        transform: translateY(-100%);
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.3s ease;
+    }
+
+    .nav-links.active {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .mobile-menu-btn {
+        display: flex;
+    }
+
+    .mobile-menu-btn.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .mobile-menu-btn.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .mobile-menu-btn.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    .hero-home {
+        padding: 8rem 1.5rem 5rem;
+    }
+
+    .philosophy,
+    .products-home,
+    .home-cta {
+        padding: 4rem 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-container {
+        padding: 1rem;
+    }
+
+    .hero-home {
+        padding: 7rem 1rem 4rem;
+    }
+
+    .hero-home h1 {
+        font-size: 2.25rem;
+    }
+
+    .philosophy-item {
+        padding: 1.75rem;
+    }
+
+    .product-card-home {
+        padding: 1.5rem;
+    }
+}

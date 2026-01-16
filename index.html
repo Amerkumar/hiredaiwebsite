@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HiredAI Labs - Software that does the job</title>
+    <meta name="description" content="HiredAI Labs builds focused software that solves real problems. AI receptionists, productivity tools, and more. Based in Burnaby, BC.">
+    <link rel="stylesheet" type="text/css" href="./styles.css">
+</head>
+<body class="home">
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">HiredAI Labs</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#products">Products</a></li>
+                <li><a href="#philosophy">Philosophy</a></li>
+                <li><a href="#" class="nav-contact" id="openContactBtn">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section - Bold & Colorful -->
+    <section class="hero hero-home">
+        <div class="hero-content">
+            <h1>We build software<br>that does the job.</h1>
+            <p class="hero-subtitle">Focused tools. Real problems. No fluff.</p>
+        </div>
+    </section>
+
+    <!-- Philosophy Section -->
+    <section id="philosophy" class="philosophy">
+        <div class="philosophy-content">
+            <div class="philosophy-grid">
+                <div class="philosophy-item" style="--accent: #FF6B35;">
+                    <h3>Small on purpose</h3>
+                    <p>We don't build platforms. We build tools that do one thing exceptionally well. If it doesn't need to exist, we don't build it.</p>
+                </div>
+                <div class="philosophy-item" style="--accent: #00A676;">
+                    <h3>Profit over growth</h3>
+                    <p>We're not chasing unicorn status. We build sustainable software that pays for itself from day one. No VC, no exit strategy, no bullshit.</p>
+                </div>
+                <div class="philosophy-item" style="--accent: #7B68EE;">
+                    <h3>Ship and iterate</h3>
+                    <p>We'd rather put something useful in your hands today than something perfect never. Real feedback beats hypothetical features every time.</p>
+                </div>
+                <div class="philosophy-item" style="--accent: #FF4757;">
+                    <h3>Opinionated software</h3>
+                    <p>Our tools make decisions so you don't have to. Less configuration, more getting things done. We're not trying to be everything to everyone.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products-home">
+        <h2>What We're Building</h2>
+        <div class="products-grid-home two-products">
+            <a href="https://hiredline.hiredai.ca" class="product-card-home product-dental">
+                <div class="product-badge">AI Receptionist</div>
+                <h3>HiredLine</h3>
+                <p class="product-tagline">For dental practices</p>
+                <p class="product-desc">24/7 patient scheduling, OpenDental integration, and a front desk that never calls in sick.</p>
+                <span class="product-cta">$199/mo — Learn more →</span>
+            </a>
+            <a href="https://rewind.hiredai.ca" class="product-card-home product-rewind">
+                <div class="product-badge">Mobile App</div>
+                <h3>Rewind</h3>
+                <p class="product-tagline">Daily memories, cleaner storage</p>
+                <p class="product-desc">See photos from this day in previous years. Swipe to keep or delete. Reclaim your storage.</p>
+                <span class="product-cta">Free — Learn more →</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="home-cta">
+        <div class="cta-content">
+            <h2>Let's talk.</h2>
+            <p>Got a problem that needs solving? We might be building the tool for it.</p>
+            <a href="#" class="btn-primary open-contact-btn">Get in Touch</a>
+        </div>
+    </section>
+
+    <!-- Contact Form Modal -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" id="closeModal">&times;</button>
+            <h2>Contact Us</h2>
+            <p class="modal-subtitle">Send us a message and we'll get back to you shortly</p>
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="contactName">Your Name</label>
+                    <input type="text" id="contactName" name="name" required placeholder="Enter your name">
+                </div>
+                <div class="form-group">
+                    <label for="contactEmail">Your Email</label>
+                    <input type="email" id="contactEmail" name="email" required placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="contactMessage">Message</label>
+                    <textarea id="contactMessage" name="message" required placeholder="Tell us how we can help you" rows="5"></textarea>
+                </div>
+                <button type="submit" class="btn-primary btn-submit">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-simple">
+                <p class="footer-location">Victoria, BC, Canada</p>
+                <p class="footer-email"><a href="mailto:tech@hiredai.ca">tech@hiredai.ca</a></p>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 HiredAI Labs</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <!-- EmailJS SDK for direct email sending -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init({
+                publicKey: 'vlMZy8HjoWAXlNWIg',
+            });
+        })();
+    </script>
+</body>
+</html>
