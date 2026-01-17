@@ -1,4 +1,4 @@
-// HiredAI Labs Portal - JavaScript
+// HiredAI Labs - Simple, Clean JavaScript
 
 // Mobile Menu Toggle
 const mobileMenuBtn = document.getElementById('mobileMenuBtn');
@@ -18,6 +18,33 @@ if (mobileMenuBtn && navLinks) {
         });
     });
 }
+
+// FAQ Accordion
+document.querySelectorAll('.faq-question').forEach(button => {
+    button.addEventListener('click', () => {
+        const answer = button.nextElementSibling;
+        const icon = button.querySelector('.faq-icon');
+
+        // Close other open FAQs
+        document.querySelectorAll('.faq-answer').forEach(item => {
+            if (item !== answer) {
+                item.classList.remove('active');
+            }
+        });
+
+        document.querySelectorAll('.faq-icon').forEach(item => {
+            if (item !== icon) {
+                item.classList.remove('active');
+            }
+        });
+
+        // Toggle current FAQ
+        answer.classList.toggle('active');
+        if (icon) {
+            icon.classList.toggle('active');
+        }
+    });
+});
 
 // Smooth scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -105,7 +132,7 @@ if (contactForm) {
         const email = document.getElementById('contactEmail').value;
         const message = document.getElementById('contactMessage').value;
 
-        // EmailJS send
+        // EmailJS send - using same config as dental page
         if (typeof emailjs !== 'undefined') {
             emailjs.send('service_wdbvfs9', 'template_gn0ql9h', {
                 from_name: name,

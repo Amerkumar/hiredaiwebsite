@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HiredAI Labs - Software that does the job</title>
     <meta name="description" content="HiredAI Labs builds focused software that solves real problems. AI receptionists, productivity tools, and more. Based in Burnaby, BC.">
-    <link rel="stylesheet" type="text/css" href="./styles.css">
+    <link rel="stylesheet" type="text/css" href="./styles.css?v=4">
 </head>
 <body class="home">
     <!-- Navigation -->
@@ -25,9 +25,10 @@
         </div>
     </nav>
 
-    <!-- Hero Section - Bold & Colorful -->
+    <!-- Hero Section -->
     <section class="hero hero-home">
         <div class="hero-content">
+            <span class="hero-label">HiredAI Labs</span>
             <h1>We build software<br>that does the job.</h1>
             <p class="hero-subtitle">Focused tools. Real problems. No fluff.</p>
         </div>
@@ -36,20 +37,25 @@
     <!-- Philosophy Section -->
     <section id="philosophy" class="philosophy">
         <div class="philosophy-content">
+            <h2 class="section-title">How we think</h2>
             <div class="philosophy-grid">
-                <div class="philosophy-item" style="--accent: #FF6B35;">
+                <div class="philosophy-item">
+                    <span class="item-number">01</span>
                     <h3>Small on purpose</h3>
                     <p>We don't build platforms. We build tools that do one thing exceptionally well. If it doesn't need to exist, we don't build it.</p>
                 </div>
-                <div class="philosophy-item" style="--accent: #00A676;">
+                <div class="philosophy-item">
+                    <span class="item-number">02</span>
                     <h3>Profit over growth</h3>
                     <p>We're not chasing unicorn status. We build sustainable software that pays for itself from day one. No VC, no exit strategy, no bullshit.</p>
                 </div>
-                <div class="philosophy-item" style="--accent: #7B68EE;">
+                <div class="philosophy-item">
+                    <span class="item-number">03</span>
                     <h3>Ship and iterate</h3>
                     <p>We'd rather put something useful in your hands today than something perfect never. Real feedback beats hypothetical features every time.</p>
                 </div>
-                <div class="philosophy-item" style="--accent: #FF4757;">
+                <div class="philosophy-item">
+                    <span class="item-number">04</span>
                     <h3>Opinionated software</h3>
                     <p>Our tools make decisions so you don't have to. Less configuration, more getting things done. We're not trying to be everything to everyone.</p>
                 </div>
@@ -59,22 +65,32 @@
 
     <!-- Products Section -->
     <section id="products" class="products-home">
-        <h2>What We're Building</h2>
-        <div class="products-grid-home two-products">
-            <a href="https://hiredline.hiredai.ca" class="product-card-home product-dental">
-                <div class="product-badge">AI Receptionist</div>
-                <h3>HiredLine</h3>
-                <p class="product-tagline">For dental practices</p>
-                <p class="product-desc">24/7 patient scheduling, OpenDental integration, and a front desk that never calls in sick.</p>
-                <span class="product-cta">$199/mo — Learn more →</span>
-            </a>
-            <a href="https://rewind.hiredai.ca" class="product-card-home product-rewind">
-                <div class="product-badge">Mobile App</div>
-                <h3>Rewind</h3>
-                <p class="product-tagline">Daily memories, cleaner storage</p>
-                <p class="product-desc">See photos from this day in previous years. Swipe to keep or delete. Reclaim your storage.</p>
-                <span class="product-cta">Free — Learn more →</span>
-            </a>
+        <div class="products-content">
+            <h2 class="section-title">What we're building</h2>
+            <div class="products-grid-home">
+                <a href="https://hiredline.hiredai.ca" class="product-card-home" target="_blank" rel="noopener">
+                    <span class="item-number">01</span>
+                    <div class="product-info">
+                        <span class="product-badge">AI Receptionist</span>
+                        <h3>HiredLine</h3>
+                        <p class="product-tagline">For dental practices</p>
+                        <p class="product-desc">24/7 patient scheduling, OpenDental integration, and a front desk that never calls in sick.</p>
+                        <span class="product-price">$199/mo</span>
+                    </div>
+                    <span class="product-arrow">→</span>
+                </a>
+                <a href="https://rewind.hiredai.ca" class="product-card-home" target="_blank" rel="noopener">
+                    <span class="item-number">02</span>
+                    <div class="product-info">
+                        <span class="product-badge">Mobile App</span>
+                        <h3>Rewind</h3>
+                        <p class="product-tagline">Daily memories, cleaner storage</p>
+                        <p class="product-desc">See photos from this day in previous years. Swipe to keep or delete. Reclaim your storage.</p>
+                        <span class="product-price">Free</span>
+                    </div>
+                    <span class="product-arrow">→</span>
+                </a>
+            </div>
         </div>
     </section>
 
@@ -83,7 +99,7 @@
         <div class="cta-content">
             <h2>Let's talk.</h2>
             <p>Got a problem that needs solving? We might be building the tool for it.</p>
-            <a href="#" class="btn-primary open-contact-btn">Get in Touch</a>
+            <button class="btn-primary open-contact-btn">Get in Touch</button>
         </div>
     </section>
 
@@ -115,6 +131,7 @@
     <footer>
         <div class="footer-content">
             <div class="footer-simple">
+                <p class="footer-brand">HiredAI Labs</p>
                 <p class="footer-location">Victoria, BC, Canada</p>
                 <p class="footer-email"><a href="mailto:tech@hiredai.ca">tech@hiredai.ca</a></p>
             </div>
